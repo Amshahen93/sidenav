@@ -1,0 +1,89 @@
+.sidnaveContent{
+    height: 100vh;
+    position: relative;
+    width: 50px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 20px;
+    transition: width ease .45s;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.sidnaveContent::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.sidnaveButton {
+    height: 45px;
+    width: 100%;
+    min-width: unset;
+    padding: 0px 0px 0px 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 0px;
+}
+.sidnaveButton:focus{
+    outline: none;
+}
+.buttonBackground{
+    background-color: #2691BB;
+}
+.buttonOpenBackground{
+    background-color: #1C333E;
+}
+.subMenuHeader{
+    width: 100%;
+    height: 5px;
+    background-color: #2691BB;
+    position: relative;
+}
+.headerTooltip{
+    height: 8px;
+    width: 8px;
+    position: absolute;
+    bottom: -4px;
+    left: 21px;
+    transform: rotate(45deg);
+    background-color: #2691BB;
+    transition: left ease .45s;
+}
+.tooltipCenter{
+    left: 100px;
+}
+.sidenavOpenButton{
+    height: 55px;
+}
+.bigNavbar{
+    width: 100px;
+    height: 200px;
+}
+.openNavbar{
+    width: 400px;
+}
+
+.navbarIcon{
+    color: #607D8B;
+    font-size: 29px;
+
+}
+.subManuContent{
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+}
+.butonTitle{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 500;
+    color: #1C333E;
+    padding-left: 20px;
+    padding-top: 4px;
+}
+.colorWhite{
+    color: white;
+}
+.b{
+    border: 1px red solid;
+}

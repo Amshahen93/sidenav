@@ -1,0 +1,29 @@
+<div class = 'sidnaveContent' [ngClass] = '{"openNavbar": isOpenNavbar}'>
+    <div class="sidenavOpenButtonContent">
+        <button  mat-button class = 'sidnaveButton sidenavOpenButton ' (click) = 'openNavbar()'>
+            <mat-icon *ngIf = '!isOpenNavbar' class = 'navbarIcon'>format_list_bulleted</mat-icon>
+            <mat-icon *ngIf = 'isOpenNavbar' class = 'navbarIcon'>navigate_before</mat-icon>
+        </button> 
+    </div>
+    <ng-container *ngFor = 'let button of navbarTitlesAndPats; let i = index'>
+        <div class = 'sidenavOpenButtonContent' >
+            <button mat-button class = 'sidnaveButton buttonBackground' [ngClass] = '{"buttonOpenBackground": button.subMenuIsOpen }' (click) = 'clickOnButton(i, button)'>
+                <mat-icon class = 'navbarIcon colorWhite'>{{button.icon}}</mat-icon>
+                <div class = 'butonTitle colorWhite'>{{ button.name }}</div>
+            </button>
+        </div>
+        <div class = 'subManuContent' 
+        [ngStyle] = '{"height": button.subMenuIsOpen ? (button.subManue.length*45 + 5 + "px"): "0px", "transition": "height ease " + (0.3 + 0.05*button.subManue.length) + "s" }' 
+        *ngIf = 'button.subManue'>
+            <div class = 'subMenuHeader'>
+                <div class = 'headerTooltip' [ngClass] = '{"tooltipCenter": isOpenNavbar}'></div>
+            </div>
+            <div class = 'sidenavOpenButtonContent' *ngFor = 'let subButton of button.subManue'>
+                <button mat-button class = 'sidnaveButton' (click) = 'clickOnButton(null, subButton)'>
+                    <mat-icon class = 'navbarIcon'>{{ subButton.icon }}</mat-icon>
+                    <div class = 'butonTitle'>{{ subButton.name }}</div>
+                </button>
+            </div>
+        </div>
+    </ng-container>
+</div>
